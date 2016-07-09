@@ -599,7 +599,7 @@ void bdt_enable(void)
         bdt_log("Bluetooth is already enabled");
         return;
     }
-    status = sBtInterface->enable(false);
+    status = sBtInterface->enable();
 
     check_return_status(status);
 }
