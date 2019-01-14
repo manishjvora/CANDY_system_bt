@@ -495,7 +495,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
                 {
                 case L2CAP_CFG_TYPE_MTU:
                     cfg_info.mtu_present = TRUE;
-                    if (p + 2 > p_next_cmd) {
+                    if (cfg_len != 2) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -504,7 +508,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_FLUSH_TOUT:
                     cfg_info.flush_to_present = TRUE;
-                    if (p + 2 > p_next_cmd) {
+                    if (cfg_len != 2) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -513,7 +521,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_QOS:
                     cfg_info.qos_present = TRUE;
-                    if (p + 2 + 5 * 4 > p_next_cmd) {
+                    if (cfg_len != 2 + 5 * 4) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -528,7 +540,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_FCR:
                     cfg_info.fcr_present = TRUE;
-                    if (p + 3 + 3 * 2 > p_next_cmd) {
+                    if (cfg_len != 3 + 3 * 2) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -542,7 +558,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_FCS:
                     cfg_info.fcs_present = TRUE;
-                    if (p + 1 > p_next_cmd) {
+                    if (cfg_len != 1) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -551,7 +571,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_EXT_FLOW:
                     cfg_info.ext_flow_spec_present = TRUE;
-                    if (p + 2 + 2 + 3 * 4 > p_next_cmd) {
+                    if (cfg_len != 2 + 2 + 3 * 4) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -634,7 +658,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
                 {
                 case L2CAP_CFG_TYPE_MTU:
                     cfg_info.mtu_present = TRUE;
-                    if (p + 2 > p_next_cmd) {
+                    if (cfg_len != 2) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -643,7 +671,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_FLUSH_TOUT:
                     cfg_info.flush_to_present = TRUE;
-                    if (p + 2 > p_next_cmd) {
+                    if (cfg_len != 2) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -652,7 +684,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_QOS:
                     cfg_info.qos_present = TRUE;
-                    if (p + 2 + 5 * 4 > p_next_cmd) {
+                    if (cfg_len != 2 + 5 * 4) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -667,7 +703,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_FCR:
                     cfg_info.fcr_present = TRUE;
-                    if (p + 3 + 3 * 2 > p_next_cmd) {
+                    if (cfg_len != 3 + 3 * 2) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -681,7 +721,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_FCS:
                     cfg_info.fcs_present = TRUE;
-                    if (p + 1 > p_next_cmd) {
+                    if (cfg_len != 1) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
@@ -690,7 +734,11 @@ static void process_l2cap_cmd (tL2C_LCB *p_lcb, UINT8 *p, UINT16 pkt_len)
 
                 case L2CAP_CFG_TYPE_EXT_FLOW:
                     cfg_info.ext_flow_spec_present = TRUE;
-                    if (p + 2 + 2 + 3 * 4 > p_next_cmd) {
+                    if (cfg_len != 2 + 2 + 3 * 4) {
+                      android_errorWriteLog(0x534e4554, "119870451");
+                      return;
+                    }
+                    if (p + cfg_len > p_next_cmd) {
                       android_errorWriteLog(0x534e4554, "74202041");
                       return;
                     }
